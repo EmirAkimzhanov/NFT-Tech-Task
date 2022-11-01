@@ -5,9 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(22,0,36);
+background: linear-gradient(90deg, rgba(22,0,36,1) 0%, rgba(121,9,113,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.css-1ri6ub7-MuiPaper-root-MuiCard-root{
+  width: 20%;
+  margin: 2%;
+  object-fit: contain;
 }
