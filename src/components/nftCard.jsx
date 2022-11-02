@@ -15,7 +15,9 @@ export default function NftCard({item}) {
       <CardMedia
         component="img"
         height="140"
-        image={item.image_url || 'https://tse1.mm.bing.net/th?id=OIP.TUDe74-_OR6O3P4V-3_FYQHaE7&pid=Api&P=0'}
+        image={item.image_url || item.collection.large_image_url
+
+        }
         alt="green iguana"
       />
       <CardContent >

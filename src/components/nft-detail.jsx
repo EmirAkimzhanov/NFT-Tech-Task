@@ -21,7 +21,7 @@ const Nftdetail = () => {
       if(loading || !nft)return <Loader/>
     return (
         <Paper elevation={24} sx={{width:"80%" , heigth:"70%" , margin:"5% auto" , display:"flex" , borderRadius:"20px"  }} className="paper">
-           <img src={nft.image_url } style={{height:"100%" , padding:"5%" ,boxShadow:"20%"}}/>
+           <img src={nft.image_url || 'https://www.creavea.com/produits/82320-l/image-3d-divers-zen-n2-30-x-30-cm-l.jpg' } style={{height:"100%" , padding:"5%" ,boxShadow:"20%"}}/>
            <Box sx={{display:"flex" , flexDirection:"column" , alignContent:"flex-end"}}>
             <Typography sx={{fontSize:"3vw" , paddingTop:"15%"}}>
                 {nft.name}
