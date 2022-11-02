@@ -1,34 +1,37 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { useAction, useAppSelector } from '../hooks';
+import React, { useEffect } from 'react';
+import { useAction } from '../hooks';
 import NftCard from './nftCard';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
-import {useSearchParams} from 'react-router-dom'
+import Loader from '../Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchNft } from '../actions/nft-action';
+// You can also use <link> for styles
+
 const TestPage = () => {
 
-
     const {fetchNft} = useAction();
-    const state = useAppSelector((state) => state.nft.nft.assets);
+    const {nfts, loading} = useSelector((state) => state.nft);
+
+
     useEffect(() => {
-        fetchNft();
+        (fetchNft());
+
       }, []);
 
 
-   
-
-console.log(state);
 
 
 
+if(loading || !nfts.length) return <Loader />
 
+console.log(nfts);
 
     return (
         <div style={{display:"flex" , flexWrap:"wrap" , justifyContent:"center"}}>
-            {state?.map((item)=>(
-                <NftCard key={item.id} item={item} sx={{width:"20%"}} />
+            { nfts.map((item)=>(
+                
+                <NftCard key={item.id} item={item} sx={{width:"20%"}}  />
             ))}
-              
+             
         </div>
     );
 };

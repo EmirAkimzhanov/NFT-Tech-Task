@@ -1,31 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-    nft: {} ,
-    nftDetail: {},
-    user: null,
-    loading: true,
+    nfts: [] ,
+    nft: null,
+    loading: false,
     error: null,
 };
 
-const nftSlice = createSlice({
-    name:"nft",
-    initialState,
-    reducers:{
-        getAllNftSucces(state , action){
-            state.nft = action.payload;
-            state.loading = false
-        },
-        getNftDetail(state, action) {
-            state.nftDetail = action.payload;
-            state.loading = false;
-          },
+export const nftReducer = (state = initialState, action) => {
+   switch(action.type) {
+    case "GET_NFT_SUCCCES": 
+       return { ...state,  
+        nfts: action.payload,
+        loading : false
     }
-})
-const { getAllNftSucces, getNftDetail } = nftSlice.actions;
+    case "GET_ONE_NFT_SUCCESS": 
+    return { ...state, nft: action.payload ,loading : false}
+    case "FETCH_NFT_LOADING": 
+    return { ...state, loading: true}
+    case "FETCH_NFT_ERROR": 
+    return { ...state, error: action.payload, loading : false}
+    default: 
+    return state
+   }
+}
 
-const nftReducer = nftSlice.reducer;
-export {
-    nftReducer,
-    getAllNftSucces,
-    getNftDetail,
-};

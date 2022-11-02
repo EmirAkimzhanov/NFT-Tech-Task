@@ -1,9 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { createStore , combineReducers, applyMiddleware} from "redux";
+import thunk from "redux-thunk"
 import { nftReducer } from "../slices/nft";
 
-export const store = configureStore({
-  reducer: {
-    nft: nftReducer,
-  },
-});
+const rootReducer = combineReducers({
+  nft: nftReducer
+})
+export const store = createStore(rootReducer, applyMiddleware(thunk));
 
