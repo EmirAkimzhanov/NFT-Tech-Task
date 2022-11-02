@@ -28,7 +28,7 @@ export default function NftCard({item}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={()=>navigate(`details/${item.asset_contract.address}/${item.token_id}/`)}>More</Button>
+        <Button size="small" sx={{margin:"auto"}} onClick={()=>navigate(`details/${item.asset_contract.address}/${item.token_id}/`)}>More</Button>
        
       </CardActions>
     </Card>

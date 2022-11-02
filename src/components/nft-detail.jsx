@@ -32,7 +32,7 @@ const Nftdetail = () => {
             <Typography sx={{fontSize:"2vw" , paddingTop:"3%"}}>
                 {nft.asset_contract.schema_name}
             </Typography>
-            <Button onClick={()=>navigate('/')} sx={{color:"black"  , width:"10%" ,height:"10%", borderRadius:"50%" , marginTop:"100%" }}>
+            <Button onClick={()=>navigate('/')} sx={{color:"black"  , width:"10%" ,height:"10%", borderRadius:"50%" , marginTop:"auto%" }}>
                 <Typography sx={{fontSize:"4vw" , color:"blue" , top:"50%" , left:"50%"}}>←</Typography>
             </Button>
            </Box>
